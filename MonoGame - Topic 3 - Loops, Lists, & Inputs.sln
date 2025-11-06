@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame - Topic 3 - Loops, Lists, & Inputs", "MonoGame - Topic 3 - Loops, Lists, & Inputs.csproj", "{64781F0E-A887-4F38-803C-F95B613F25DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64781F0E-A887-4F38-803C-F95B613F25DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64781F0E-A887-4F38-803C-F95B613F25DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64781F0E-A887-4F38-803C-F95B613F25DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64781F0E-A887-4F38-803C-F95B613F25DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB5547B8-B747-45EF-9BDD-FF102F8E5D57}
+	EndGlobalSection
+EndGlobal
