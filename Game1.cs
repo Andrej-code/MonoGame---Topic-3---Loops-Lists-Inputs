@@ -167,8 +167,12 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
             }
 
 
+            if(grassTiles.Count == 0)
+            {
 
+                Exit();
 
+            }
 
 
             base.Update(gameTime);
