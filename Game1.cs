@@ -23,8 +23,21 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
         Rectangle window;
 
         Texture2D grassTexture;
+
+        Texture2D playerTexture;
+
         Texture2D mowerTexture;
         Rectangle mowerRect;
+
+        Texture2D mower1Texture;
+        Rectangle mower1Rect;
+
+        Texture2D mower2Texture;
+        Rectangle mower2Rect;
+
+        Texture2D mower3Texture;
+        Rectangle mower3Rect;
+
 
         SoundEffect mowerSound;
         SoundEffectInstance mowerSoundInstance;
@@ -47,7 +60,9 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
 
 
             mowerRect = new Rectangle(100, 100, 30, 30);
-
+            mower1Rect = new Rectangle(100, 100, 30, 30);
+            mower2Rect = new Rectangle(100, 100, 30, 30);
+            mower3Rect = new Rectangle(100, 100, 30, 30);
 
             grassTiles = new List<Rectangle>();
             for (int x = 0; x < window.Width; x+= 5)
@@ -72,7 +87,13 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
 
             // TODO: use this.Content to load your game content here
 
-            mowerTexture = Content.Load<Texture2D>("Images/mower");
+            mowerTexture = Content.Load<Texture2D>("Images/mower_1");
+            mower1Texture = Content.Load<Texture2D>("Images/mower_2");
+            mower2Texture = Content.Load<Texture2D>("Images/mower_3");
+            mower3Texture = Content.Load<Texture2D>("Images/mower_4");
+
+            playerTexture = mowerTexture;
+
             grassTexture = Content.Load<Texture2D>("Images/long_grass");
             mowerSound = Content.Load<SoundEffect>("Audio/mower_sound");
             mowerSoundInstance = mowerSound.CreateInstance();
@@ -93,22 +114,26 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
             if (keyboardState.IsKeyDown(Keys.W))
             {
                 mowerSpeed.Y += -1;
+                playerTexture = mower1Texture;
             }
 
             if (keyboardState.IsKeyDown(Keys.S))
             {
                 mowerSpeed.Y += 1;
+                playerTexture = mower3Texture;
             }
 
             if (keyboardState.IsKeyDown(Keys.A))
             {
                 mowerSpeed.X += -1;
+                playerTexture = mowerTexture;
             }
 
 
             if (keyboardState.IsKeyDown(Keys.D))
             {
                 mowerSpeed.X += 1;
+                playerTexture = mower2Texture;
             }
 
             mowerRect.Offset(mowerSpeed);
@@ -116,12 +141,16 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
 
             if (mowerSpeed == Vector2.Zero)
             {
-                mowerSoundInstance.Stop();
+
+                mowerSoundInstance.Play();
+                mowerSoundInstance.Volume = 0.4f;
+
 
             }
             else
             {
                 mowerSoundInstance.Play();
+                mowerSoundInstance.Volume = 1f;
             }
 
 
@@ -134,8 +163,13 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
                     i--;
 
                 }
-
+            
             }
+
+
+
+
+
 
             base.Update(gameTime);
         }
@@ -153,7 +187,9 @@ namespace MonoGame___Topic_3___Loops__Lists____Inputs
                 _spriteBatch.Draw(grassTexture, grass, Color.White);
             }
 
-            _spriteBatch.Draw(mowerTexture, mowerRect, Color.White);
+            _spriteBatch.Draw(playerTexture, mowerRect, Color.White);
+      
+
 
 
 
